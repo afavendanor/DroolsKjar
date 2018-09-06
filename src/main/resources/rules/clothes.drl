@@ -1,0 +1,20 @@
+package rules
+ 
+import co.com.ceiba.cds.drools.model.Product
+
+rule "Offer for Shirt"
+	when 
+		productObject: Product(type=="shirt")
+	then
+		double precio = 32000;
+		productObject.setDiscount(0.18);
+		productObject.setPrice(precio - (precio * productObject.getDiscount()));
+	end
+rule "Offer for Pants"
+	when 
+		productObject: Product(type=="pants")
+	then
+		double precio = 252875;
+		productObject.setDiscount(0.9);
+		productObject.setPrice(precio - (precio * productObject.getDiscount()));
+	end
