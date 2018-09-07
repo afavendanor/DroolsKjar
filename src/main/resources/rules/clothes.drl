@@ -14,7 +14,7 @@ rule "Offer for Pants"
 	when 
 		productObject: Product(type=="pants")
 	then
-		double precio = 252875;
-		productObject.setDiscount(0.9);
+		double precio = 100450;
+		productObject.setDiscount(0.14);
 		productObject.setPrice(precio - (precio * productObject.getDiscount()));
 	end
