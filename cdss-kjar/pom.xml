@@ -33,9 +33,9 @@
 						</goals>
 						<configuration>
 							<excludes>
-							<exclude>application.properties</exclude>
-							<exclude>tinylog.properties</exclude>
-							<exclude>**/co/**</exclude>								
+								<exclude>application.properties</exclude>
+								<exclude>tinylog.properties</exclude>
+								<exclude>**/co/**</exclude>
 							</excludes>
 						</configuration>
 					</execution>
@@ -107,6 +107,8 @@
 
 	<dependencies>
 
+
+
 		<dependency>
 			<groupId>org.tinylog</groupId>
 			<artifactId>tinylog</artifactId>
@@ -141,6 +143,12 @@
 			<groupId>org.eclipse.jgit</groupId>
 			<artifactId>org.eclipse.jgit</artifactId>
 			<version>4.9.3.201807311005-r</version>
+		</dependency>
+
+		<dependency>
+			<groupId>co.com.ceiba</groupId>
+			<artifactId>cdss-prueba-model</artifactId>
+			<version>1.0</version>
 		</dependency>
 
 	</dependencies>
