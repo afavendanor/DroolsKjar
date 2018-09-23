@@ -5,12 +5,15 @@
 **/.idea/
 **/build/
 **/out/
+**/*.iml
+**/target/
 
 #Eclipse
-
 ### Eclipse template
 **/.settings/
 **/.metadata
 **/.project
 **/.classpath
-**/target
+
+#Logs
+**/log/

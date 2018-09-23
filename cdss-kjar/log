@@ -1,0 +1,57 @@
+10:10:37.713 [main] INFO  o.a.m.cli.event.ExecutionEventLogger - Scanning for projects...
+10:10:38.885 [main] WARN  org.apache.maven.DefaultMaven - 
+10:10:38.885 [main] WARN  org.apache.maven.DefaultMaven - Some problems were encountered while building the effective model for co.com.suramericana:cdss-kjar:kjar:0.0.1-SNAPSHOT
+10:10:38.885 [main] WARN  org.apache.maven.DefaultMaven - 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.apache.maven.plugins:maven-jar-plugin @ line 61, column 12
+10:10:38.885 [main] WARN  org.apache.maven.DefaultMaven - 
+10:10:38.885 [main] WARN  org.apache.maven.DefaultMaven - It is highly recommended to fix these problems because they threaten the stability of your build.
+10:10:38.885 [main] WARN  org.apache.maven.DefaultMaven - 
+10:10:38.885 [main] WARN  org.apache.maven.DefaultMaven - For this reason, future Maven versions might no longer support building such malformed projects.
+10:10:38.886 [main] WARN  org.apache.maven.DefaultMaven - 
+10:10:38.889 [main] INFO  o.a.m.cli.event.ExecutionEventLogger -                                                                         
+10:10:38.890 [main] INFO  o.a.m.cli.event.ExecutionEventLogger - ------------------------------------------------------------------------
+10:10:38.890 [main] INFO  o.a.m.cli.event.ExecutionEventLogger - Building cdss-kjar 0.0.1-SNAPSHOT
+10:10:38.890 [main] INFO  o.a.m.cli.event.ExecutionEventLogger - ------------------------------------------------------------------------
+10:10:39.478 [main] INFO  o.a.m.cli.event.ExecutionEventLogger - 
+10:10:39.478 [main] INFO  o.a.m.cli.event.ExecutionEventLogger - --- maven-clean-plugin:2.5:clean (default-clean) @ cdss-kjar ---
+10:10:39.554 [main] INFO  o.a.maven.plugin.clean.CleanMojo - Deleting D:\Workspaces\CDDS\cdss-kjar\.\target
+10:10:39.588 [main] INFO  o.a.m.cli.event.ExecutionEventLogger - 
+10:10:39.588 [main] INFO  o.a.m.cli.event.ExecutionEventLogger - --- maven-resources-plugin:3.1.0:resources (default-resources) @ cdss-kjar ---
+10:10:39.927 [main] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Using 'UTF-8' encoding to copy filtered resources.
+10:10:39.940 [main] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 6 resources
+10:10:39.973 [main] INFO  o.a.m.cli.event.ExecutionEventLogger - 
+10:10:39.974 [main] INFO  o.a.m.cli.event.ExecutionEventLogger - --- maven-compiler-plugin:3.5.1:compile (default-compile) @ cdss-kjar ---
+10:10:40.685 [main] INFO  o.a.m.plugin.compiler.CompilerMojo - Changes detected - recompiling the module!
+10:10:40.727 [main] INFO  o.c.p.compiler.javac.JavacCompiler - Compiling 6 source files to D:\Workspaces\CDDS\cdss-kjar\.\target\classes
+10:10:42.274 [main] ERROR o.a.m.plugin.compiler.CompilerMojo - error reading C:\Users\andres.avendano\.m2\repository\org\tinylog\tinylog\1.3.5\tinylog-1.3.5.jar; invalid LOC header (bad signature)
+10:10:42.274 [main] INFO  o.a.m.cli.event.ExecutionEventLogger - 
+10:10:42.274 [main] INFO  o.a.m.cli.event.ExecutionEventLogger - --- kie-maven-plugin:6.2.0.Final:build (default-build) @ cdss-kjar ---
+10:10:42.521 [main] INFO  o.d.c.k.b.impl.KieRepositoryImpl - Adding KieModule from resource: FileResource[file=D:\Workspaces\CDDS\cdss-kjar\src\main\resources]
+10:10:42.818 [main] WARN  o.d.c.k.b.impl.ClasspathKieProject - Unable to find pom.properties in /D:/Workspaces/CDDS/cdss-kjar/src/main/resources
+10:10:42.831 [main] INFO  o.d.c.k.b.impl.ClasspathKieProject - Recursed up folders,  found and used pom.xml D:\Workspaces\CDDS\cdss-kjar\pom.xml
+10:10:42.838 [main] INFO  o.d.c.k.b.impl.KieRepositoryImpl - KieModule was added: FileKieModule[releaseId=co.com.suramericana:cdss-kjar:0.0.1-SNAPSHOT,file=D:\Workspaces\CDDS\cdss-kjar\src\main\resources]
+10:10:43.209 [main] WARN  o.d.c.k.b.impl.AbstractKieModule - No files found for KieBase KieBase, searching folder D:\Workspaces\CDDS\cdss-kjar\src\main\resources
+10:10:43.258 [main] INFO  org.kie.maven.plugin.BuildMojo - KieModule successfully built!
+10:10:43.258 [main] INFO  o.a.m.cli.event.ExecutionEventLogger - 
+10:10:43.258 [main] INFO  o.a.m.cli.event.ExecutionEventLogger - --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ cdss-kjar ---
+10:10:43.264 [main] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Using 'UTF-8' encoding to copy filtered resources.
+10:10:43.264 [main] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\Workspaces\CDDS\cdss-kjar\.\src\test\resources
+10:10:43.265 [main] INFO  o.a.m.cli.event.ExecutionEventLogger - 
+10:10:43.265 [main] INFO  o.a.m.cli.event.ExecutionEventLogger - --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ cdss-kjar ---
+10:10:43.269 [main] INFO  o.a.m.p.compiler.TestCompilerMojo - No sources to compile
+10:10:43.270 [main] INFO  o.a.m.cli.event.ExecutionEventLogger - 
+10:10:43.270 [main] INFO  o.a.m.cli.event.ExecutionEventLogger - --- maven-surefire-plugin:2.22.0:test (default-test) @ cdss-kjar ---
+10:10:43.513 [main] INFO  o.a.m.plugin.surefire.SurefirePlugin - No tests to run.
+10:10:43.527 [main] INFO  o.a.m.cli.event.ExecutionEventLogger - 
+10:10:43.527 [main] INFO  o.a.m.cli.event.ExecutionEventLogger - --- maven-jar-plugin:2.4:jar (default-jar) @ cdss-kjar ---
+10:10:44.169 [main] INFO  o.c.plexus.archiver.jar.JarArchiver - Building jar: D:\Workspaces\CDDS\cdss-kjar\.\target\cdss-kjar-0.0.1-SNAPSHOT.jar
+10:10:44.205 [main] INFO  o.a.m.cli.event.ExecutionEventLogger - 
+10:10:44.205 [main] INFO  o.a.m.cli.event.ExecutionEventLogger - --- maven-install-plugin:2.5.2:install (default-install) @ cdss-kjar ---
+10:10:44.264 [main] INFO  org.apache.maven.DefaultMaven - Installing D:\Workspaces\CDDS\cdss-kjar\.\target\cdss-kjar-0.0.1-SNAPSHOT.jar to C:\Users\andres.avendano\.m2\repository\co\com\suramericana\cdss-kjar\0.0.1-SNAPSHOT\cdss-kjar-0.0.1-SNAPSHOT.jar
+10:10:44.273 [main] INFO  org.apache.maven.DefaultMaven - Installing D:\Workspaces\CDDS\cdss-kjar\.\pom.xml to C:\Users\andres.avendano\.m2\repository\co\com\suramericana\cdss-kjar\0.0.1-SNAPSHOT\cdss-kjar-0.0.1-SNAPSHOT.pom
+10:10:44.291 [main] INFO  o.a.m.cli.event.ExecutionEventLogger - ------------------------------------------------------------------------
+10:10:44.292 [main] INFO  o.a.m.cli.event.ExecutionEventLogger - BUILD SUCCESS
+10:10:44.292 [main] INFO  o.a.m.cli.event.ExecutionEventLogger - ------------------------------------------------------------------------
+10:10:44.292 [main] INFO  o.a.m.cli.event.ExecutionEventLogger - Total time: 6.604s
+10:10:44.292 [main] INFO  o.a.m.cli.event.ExecutionEventLogger - Finished at: Sun Sep 23 10:10:44 COT 2018
+10:10:44.495 [main] INFO  o.a.m.cli.event.ExecutionEventLogger - Final Memory: 36M/485M
+10:10:44.495 [main] INFO  o.a.m.cli.event.ExecutionEventLogger - ------------------------------------------------------------------------
