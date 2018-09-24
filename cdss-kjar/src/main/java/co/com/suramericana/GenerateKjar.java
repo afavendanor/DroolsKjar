@@ -1,14 +1,12 @@
 package co.com.suramericana;
 
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.PrintStream;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.maven.cli.MavenCli;
 import org.eclipse.jgit.api.CloneCommand;
 import org.eclipse.jgit.api.Git;
-import org.eclipse.jgit.api.errors.GitAPIException;
 
 import co.com.suramericana.domain.RepositoryProperties;
 import co.com.suramericana.exception.TechnicalException;
@@ -22,7 +20,7 @@ public class GenerateKjar {
             cloneCommand.setURI(repositoryProperties.getRemoteUrl())
             		.setDirectory(repositoryProperties.getLocalRepository())
                     .setCredentialsProvider(repositoryProperties.getCredentials()).call();
-        } catch (IOException | GitAPIException e) {
+        } catch (Exception e) {
         	System.err.println("Error en repo: " + e.getMessage());
             throw new TechnicalException(e.getMessage(), e);
         }

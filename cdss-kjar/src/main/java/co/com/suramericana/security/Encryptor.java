@@ -1,14 +1,12 @@
 package co.com.suramericana.security;
 
-import javax.crypto.*;
+import java.util.Base64;
+
+import javax.crypto.KeyGenerator;
+import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
 import co.com.suramericana.exception.TechnicalException;
-
-import java.security.InvalidAlgorithmParameterException;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
-import java.util.Base64;
 
 public final class Encryptor {
 
@@ -31,8 +29,7 @@ public final class Encryptor {
             final byte[] key = secretKey.getEncoded();
             return Base64.getEncoder().withoutPadding().encodeToString(encodedItem)
                     + SEPARATOR + Base64.getEncoder().withoutPadding().encodeToString(key);
-        } catch (NoSuchAlgorithmException | NoSuchPaddingException | IllegalBlockSizeException
-                | BadPaddingException | InvalidKeyException e) {
+        } catch (Exception e) {
             throw new TechnicalException(e.getMessage(),e);
         }
     }
@@ -46,8 +43,7 @@ public final class Encryptor {
         final javax.crypto.Cipher cipher = javax.crypto.Cipher.getInstance(CIPHER_TRANSFORMATION);
         cipher.init(javax.crypto.Cipher.DECRYPT_MODE, originalKey, cipher.getParameters());
         return new String(cipher.doFinal(decodedSecret));
-        } catch (NoSuchAlgorithmException | NoSuchPaddingException | IllegalBlockSizeException | InvalidAlgorithmParameterException
-                | BadPaddingException | InvalidKeyException e) {
+        } catch (Exception  e) {
             throw new TechnicalException(e.getMessage(),e);
         }
     }

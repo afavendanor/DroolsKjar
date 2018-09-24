@@ -20,27 +20,7 @@
 	<build>
 		<plugins>
 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<version>2.4</version>
-				<executions>
-					<execution>
-						<id>default-jar</id>
-						<phase>package</phase>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-						<configuration>
-							<excludes>
-								<exclude>application.properties</exclude>
-								<exclude>tinylog.properties</exclude>
-								<exclude>**/co/**</exclude>
-							</excludes>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
+
 
 			<plugin>
 				<groupId>org.kie</groupId>
@@ -48,29 +28,50 @@
 				<version>${jbpm.version}</version>
 				<extensions>true</extensions>
 			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.5.1</version>
-				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-				</configuration>
-			</plugin>
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>1.6</version>
 				<configuration>
-					<archive>
-						<manifest>
-							<addClasspath>true</addClasspath>
-							<classpathPrefix>lib/</classpathPrefix>
-							<mainClass>theMainClass</mainClass>
-						</manifest>
-					</archive>
+					<createDependencyReducedPom>true</createDependencyReducedPom>
+					<filters>
+						<filter>
+							<artifact>*:*</artifact>
+							<excludes>
+								<exclude>application.properties</exclude>
+								<exclude>tinylog.properties</exclude>
+								<exclude>**/co/com/suramericana/**</exclude>
+							</excludes>
+						</filter>
+					</filters>
 				</configuration>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+							<transformers>
+								<transformer
+									implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
+								<transformer
+									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+									<mainClass>co.com.suramericana.GenerateKjar</mainClass>
+								</transformer>
+							</transformers>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
+
+
+
+
+
+
+
 
 		</plugins>
 
@@ -81,6 +82,7 @@
 					<artifactId>lifecycle-mapping</artifactId>
 					<version>1.0.0</version>
 					<configuration>
+
 						<lifecycleMappingMetadata>
 							<pluginExecutions>
 								<pluginExecution>
@@ -98,9 +100,13 @@
 								</pluginExecution>
 							</pluginExecutions>
 						</lifecycleMappingMetadata>
+
 					</configuration>
 				</plugin>
 			</plugins>
+
+
+
 		</pluginManagement>
 
 	</build>
@@ -113,29 +119,34 @@
 			<groupId>org.tinylog</groupId>
 			<artifactId>tinylog</artifactId>
 			<version>1.3.5</version>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.maven</groupId>
 			<artifactId>maven-embedder</artifactId>
 			<version>3.1.1</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.eclipse.aether</groupId>
 			<artifactId>aether-connector-wagon</artifactId>
 			<version>0.9.0.M2</version>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.maven.wagon</groupId>
 			<artifactId>wagon-http-lightweight</artifactId>
 			<version>2.5</version>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
 			<version>1.0.13</version>
+			<scope>provided</scope>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.eclipse.jgit/org.eclipse.jgit -->
@@ -143,6 +154,7 @@
 			<groupId>org.eclipse.jgit</groupId>
 			<artifactId>org.eclipse.jgit</artifactId>
 			<version>4.9.3.201807311005-r</version>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
@@ -150,6 +162,9 @@
 			<artifactId>cdss-prueba-model</artifactId>
 			<version>1.0</version>
 		</dependency>
+
+
+
 
 	</dependencies>
 </project>
